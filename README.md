@@ -2,3 +2,9 @@
 php type checker
 
 [![Build Status](https://travis-ci.org/niikunihiro/Type.svg?branch=master)](https://travis-ci.org/niikunihiro/Type)
+
+## install
+
+```
+composer require nielsen/type
+```
