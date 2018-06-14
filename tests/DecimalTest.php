@@ -15,14 +15,26 @@ class DecimalTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+    /**
+     * @test
+     */
+    public function decimalGiveStringFloatReturnFloat()
+    {
+        $expected = 122.345;
+        $actual = (new Decimal('122.345'))->getValue();
+
+        $this->assertSame($expected, $actual);
+    }
 
     /**
      * @test
-     * @expectedException \Nielsen\Type\Exception\InvalidTypeException
      */
-    public function decimalGiveIntegerThrowException()
+    public function decimalGiveIntegerReturnFloat()
     {
-        new Decimal(1234);
+        $expected = 1234.0;
+        $actual = (new Decimal(1234))->getValue();
+
+        $this->assertSame($expected, $actual);
     }
 
     /**
