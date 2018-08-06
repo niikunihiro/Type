@@ -17,6 +17,26 @@ class IntegerTest extends TestCase
 
     /**
      * @test
+     */
+    function integerGiveZeroReturnInteger()
+    {
+        $expected = 0;
+        $actual = (new Integer($expected))->getValue();
+        $this->assertSame($expected, $actual);
+    }
+
+    /**
+     * @test
+     */
+    function integerGiveMinusReturnInteger()
+    {
+        $expected = -10;
+        $actual = (new Integer($expected))->getValue();
+        $this->assertSame($expected, $actual);
+    }
+
+    /**
+     * @test
      * @expectedException \Nielsen\Type\Exception\InvalidTypeException
      */
     function integerGiveStringThrowException()
